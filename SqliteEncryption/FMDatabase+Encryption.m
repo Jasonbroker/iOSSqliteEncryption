@@ -56,19 +56,19 @@ void SwizzleClassMethod(id c, SEL orig, SEL new1, BOOL isClassMethod) {
     return open;
 }
 
-+ (BOOL)encriptDatabase:(NSString *)path {
++ (BOOL)encryptDatabase:(NSString *)path {
     return [self encriptDatabase:path
                        removeOld:YES];
 }
 
 + (BOOL)encriptDatabase:(NSString *)path
               removeOld:(BOOL)remove {
-    return [self encriptDatabase:[self changeDatabaseToOldPath:path]
+    return [self encryptDatabase:[self changeDatabaseToOldPath:path]
                                   toPath:path
                       removeWhenComplete:remove];
 }
 
-+ (BOOL)encriptDatabase:(NSString *)path
++ (BOOL)encryptDatabase:(NSString *)path
                  toPath:(NSString *)destinationPath
      removeWhenComplete:(BOOL)remove {
     // 路径为空

@@ -68,7 +68,7 @@
     NSString *documentDir = [documentPaths objectAtIndex:0];
     NSString *ecDBPath = [documentDir stringByAppendingPathComponent:@"result.sqlite"];
     
-    BOOL result = [FMDatabase encriptDatabase:self.databasePath toPath:ecDBPath removeWhenComplete:YES];
+    BOOL result = [FMDatabase encryptDatabase:self.databasePath toPath:ecDBPath removeWhenComplete:YES];
     self.databasePath = ecDBPath;
     if (result) {
         NSLog(@"change succeed");

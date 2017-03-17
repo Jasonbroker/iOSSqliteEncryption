@@ -8,33 +8,33 @@
 
 #import <FMDB/FMDB.h>
 
-@interface FMDatabase (Encription)
+@interface FMDatabase (Encryption)
 
 /**
- encript db and delete the old file
+ encrypt db and delete the old file
  @param path old db path
  @return YES if succeed.
  */
-+ (BOOL)encriptDatabase:(NSString *)path;
++ (BOOL)encryptDatabase:(NSString *)path;
 /**
- encript db and rename the old db with extension *.old
+ encrypt db and rename the old db with extension *.old
 
  @param path old db path
  @param remove remove old db or not
  @return YES if succeed.
  */
-+ (BOOL)encriptDatabase:(NSString *)path
++ (BOOL)encryptDatabase:(NSString *)path
               removeOld:(BOOL)remove;
 
 /**
- encript db.
+ encrypt db.
  
  @param path old db path
  @param destinationPath new db path
  @param remove remove the old path or not
  @return YES if succeed.
  */
-+ (BOOL)encriptDatabase:(NSString *)path
++ (BOOL)encryptDatabase:(NSString *)path
                  toPath:(NSString *)destinationPath
      removeWhenComplete:(BOOL)remove;
 
