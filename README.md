@@ -10,10 +10,10 @@ pod 'FMDB/SQLCipher'
 ```
 Drag `SqliteEncryption` folder into your project.
 
-#How to use
+# How to use
 
 ```
-	+ (BOOL)encryptDatabase:(NSString *)path;
++ (BOOL)encryptDatabase:(NSString *)path;
 ```
  is use to encrypt an existed database.
 
