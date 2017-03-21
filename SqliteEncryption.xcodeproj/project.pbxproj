@@ -33,7 +33,7 @@
 /* Begin PBXFileReference section */
 		68CCD96DEBE058290015FA63 /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
 		8D4B665A0CF47173894C4D72 /* libPods-testTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-testTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9627DDF01DCAE89400B525DC /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9627DDF01DCAE89400B525DC /* SqliteEncryption.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SqliteEncryption.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9627DDF41DCAE89400B525DC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9627DDF61DCAE89400B525DC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9627DDF71DCAE89400B525DC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -43,7 +43,7 @@
 		9627DDFF1DCAE89400B525DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9627DE021DCAE89400B525DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9627DE041DCAE89400B525DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9627DE091DCAE89400B525DC /* testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9627DE091DCAE89400B525DC /* SqliteEncryptionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SqliteEncryptionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9627DE0D1DCAE89400B525DC /* testTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testTests.m; sourceTree = "<group>"; };
 		9627DE0F1DCAE89400B525DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96E25D221E7A59D100A61969 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -90,8 +90,8 @@
 		9627DDE71DCAE89400B525DC = {
 			isa = PBXGroup;
 			children = (
-				9627DDF21DCAE89400B525DC /* test */,
-				9627DE0C1DCAE89400B525DC /* testTests */,
+				9627DDF21DCAE89400B525DC /* SqliteEncryption */,
+				9627DE0C1DCAE89400B525DC /* SqliteEncryptionTests */,
 				9627DDF11DCAE89400B525DC /* Products */,
 				4B9C9D4E2ACFDC84DCCD960E /* Pods */,
 				EED00601C1E5339BCC42D628 /* Frameworks */,
@@ -101,13 +101,13 @@
 		9627DDF11DCAE89400B525DC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9627DDF01DCAE89400B525DC /* test.app */,
-				9627DE091DCAE89400B525DC /* testTests.xctest */,
+				9627DDF01DCAE89400B525DC /* SqliteEncryption.app */,
+				9627DE091DCAE89400B525DC /* SqliteEncryptionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9627DDF21DCAE89400B525DC /* test */ = {
+		9627DDF21DCAE89400B525DC /* SqliteEncryption */ = {
 			isa = PBXGroup;
 			children = (
 				96E25D241E7BB0D900A61969 /* SqliteEncryption */,
@@ -121,6 +121,7 @@
 				9627DE041DCAE89400B525DC /* Info.plist */,
 				9627DDF31DCAE89400B525DC /* Supporting Files */,
 			);
+			name = SqliteEncryption;
 			path = test;
 			sourceTree = "<group>";
 		};
@@ -132,12 +133,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9627DE0C1DCAE89400B525DC /* testTests */ = {
+		9627DE0C1DCAE89400B525DC /* SqliteEncryptionTests */ = {
 			isa = PBXGroup;
 			children = (
 				9627DE0D1DCAE89400B525DC /* testTests.m */,
 				9627DE0F1DCAE89400B525DC /* Info.plist */,
 			);
+			name = SqliteEncryptionTests;
 			path = testTests;
 			sourceTree = "<group>";
 		};
@@ -163,9 +165,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9627DDEF1DCAE89400B525DC /* test */ = {
+		9627DDEF1DCAE89400B525DC /* SqliteEncryption */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9627DE121DCAE89400B525DC /* Build configuration list for PBXNativeTarget "test" */;
+			buildConfigurationList = 9627DE121DCAE89400B525DC /* Build configuration list for PBXNativeTarget "SqliteEncryption" */;
 			buildPhases = (
 				4D97C3C031F4ED197D80C986 /* [CP] Check Pods Manifest.lock */,
 				9627DDEC1DCAE89400B525DC /* Sources */,
@@ -178,14 +180,14 @@
 			);
 			dependencies = (
 			);
-			name = test;
+			name = SqliteEncryption;
 			productName = test;
-			productReference = 9627DDF01DCAE89400B525DC /* test.app */;
+			productReference = 9627DDF01DCAE89400B525DC /* SqliteEncryption.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9627DE081DCAE89400B525DC /* testTests */ = {
+		9627DE081DCAE89400B525DC /* SqliteEncryptionTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9627DE151DCAE89400B525DC /* Build configuration list for PBXNativeTarget "testTests" */;
+			buildConfigurationList = 9627DE151DCAE89400B525DC /* Build configuration list for PBXNativeTarget "SqliteEncryptionTests" */;
 			buildPhases = (
 				28BC50F9C6FC8D00336F6D0E /* [CP] Check Pods Manifest.lock */,
 				9627DE051DCAE89400B525DC /* Sources */,
@@ -199,9 +201,9 @@
 			dependencies = (
 				9627DE0B1DCAE89400B525DC /* PBXTargetDependency */,
 			);
-			name = testTests;
+			name = SqliteEncryptionTests;
 			productName = testTests;
-			productReference = 9627DE091DCAE89400B525DC /* testTests.xctest */;
+			productReference = 9627DE091DCAE89400B525DC /* SqliteEncryptionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -224,7 +226,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9627DDEB1DCAE89400B525DC /* Build configuration list for PBXProject "test" */;
+			buildConfigurationList = 9627DDEB1DCAE89400B525DC /* Build configuration list for PBXProject "SqliteEncryption" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -237,8 +239,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9627DDEF1DCAE89400B525DC /* test */,
-				9627DE081DCAE89400B525DC /* testTests */,
+				9627DDEF1DCAE89400B525DC /* SqliteEncryption */,
+				9627DE081DCAE89400B525DC /* SqliteEncryptionTests */,
 			);
 		};
 /* End PBXProject section */
@@ -381,7 +383,7 @@
 /* Begin PBXTargetDependency section */
 		9627DE0B1DCAE89400B525DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9627DDEF1DCAE89400B525DC /* test */;
+			target = 9627DDEF1DCAE89400B525DC /* SqliteEncryption */;
 			targetProxy = 9627DE0A1DCAE89400B525DC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -529,7 +531,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.51talk.testTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/test.app/test";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SqliteEncryption.app/SqliteEncryption";
 			};
 			name = Debug;
 		};
@@ -542,14 +544,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.51talk.testTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/test.app/test";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SqliteEncryption.app/SqliteEncryption";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9627DDEB1DCAE89400B525DC /* Build configuration list for PBXProject "test" */ = {
+		9627DDEB1DCAE89400B525DC /* Build configuration list for PBXProject "SqliteEncryption" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9627DE101DCAE89400B525DC /* Debug */,
@@ -558,7 +560,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9627DE121DCAE89400B525DC /* Build configuration list for PBXNativeTarget "test" */ = {
+		9627DE121DCAE89400B525DC /* Build configuration list for PBXNativeTarget "SqliteEncryption" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9627DE131DCAE89400B525DC /* Debug */,
@@ -567,7 +569,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9627DE151DCAE89400B525DC /* Build configuration list for PBXNativeTarget "testTests" */ = {
+		9627DE151DCAE89400B525DC /* Build configuration list for PBXNativeTarget "SqliteEncryptionTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9627DE161DCAE89400B525DC /* Debug */,
