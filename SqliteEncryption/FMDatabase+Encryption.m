@@ -64,34 +64,38 @@ void SwizzleClassMethod(id c, SEL orig, SEL new1, BOOL isClassMethod) {
 + (BOOL)encriptDatabase:(NSString *)path
               removeOld:(BOOL)remove {
     return [self encryptDatabase:[self changeDatabaseToOldPath:path]
-                                  toPath:path
-                      removeWhenComplete:remove];
+                          toPath:path
+              removeWhenComplete:remove];
 }
 
 + (BOOL)encryptDatabase:(NSString *)path
-                 toPath:(NSString *)destinationPath
+                 toPath:(nullable NSString *)destinationPath
      removeWhenComplete:(BOOL)remove {
-    // 路径为空
-    if (!path || !destinationPath) {
+    
+    if (!path) {
         return NO;
     }
-    // 两个路径相同
+    
+    if (!destinationPath) {
+        destinationPath = [self changeDatabaseToOldPath:path];
+    }
+    
+    // path is the same
     if ([path isEqualToString:destinationPath]) {
         return NO;
     }
-    // 该路径下没有文件
+    // no file exist
     if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
         return NO;
     }
     
-    // 未加密数据库
+    // unencrpted db
     sqlite3 *unencrypted_DB;
-    if (sqlite3_open([path UTF8String], &unencrypted_DB) == SQLITE_OK) { // 打开未加密数据库
+    if (sqlite3_open([path UTF8String], &unencrypted_DB) == SQLITE_OK) { // open unencrpted db
     
-        // 目标路径添加空的加密数据库
         // encrypted: attach的column alias
-        // destinationPath: 目标路径
-        // KEY: 加密的key
+        // destinationPath: dest path
+        // KEY: key
         const char* sqlQ = [[NSString stringWithFormat:@"ATTACH DATABASE '%@' AS 'encrypted' KEY '%@';",destinationPath,DB_SECRETKEY] UTF8String];
         
         char* attacherrmsg = NULL;
@@ -103,7 +107,6 @@ void SwizzleClassMethod(id c, SEL orig, SEL new1, BOOL isClassMethod) {
         
         char* exporterrmsg = NULL;
         // export database with column named 'encrypted'
-        // sqlcipher_export() 将会在原来attach的目录下创建该加密过的数据库文件
         sqlite3_exec(unencrypted_DB, "SELECT sqlcipher_export('encrypted');", NULL, NULL, &exporterrmsg);
         if (exporterrmsg) {
             return NO;
@@ -154,7 +157,7 @@ void SwizzleClassMethod(id c, SEL orig, SEL new1, BOOL isClassMethod) {
     return key;
 }
 
-// 获取在app安装后不再改变的一个key
+// get a key which will not change.
 + (NSString *)getUID {
     NSString *uniqueIdentifier = nil;
     if( [UIDevice instancesRespondToSelector:@selector(identifierForVendor)] ) {

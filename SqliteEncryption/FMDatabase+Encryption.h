@@ -11,14 +11,13 @@
 @interface FMDatabase (Encryption)
 
 /**
- encrypt db and delete the old file
+ Encrypt db and delete the old file
  @param path old db path
  @return YES if succeed.
  */
 + (BOOL)encryptDatabase:(NSString *)path;
 /**
- encrypt db and rename the old db with extension *.old
-
+ Encrypt db and rename the old db with extension *.old
  @param path old db path
  @param remove remove old db or not
  @return YES if succeed.
@@ -27,8 +26,7 @@
               removeOld:(BOOL)remove;
 
 /**
- encrypt db.
- 
+ Encrypt db.
  @param path old db path
  @param destinationPath new db path
  @param remove remove the old path or not
